@@ -2,6 +2,20 @@
 
 > [Yeoman](http://yeoman.io) generator
 
+It provides a basic boilerplate for a [Composer](http://getcomposer.org) php library project, which features:
+
+* Phpunit with code coverage, phpcs, phpmd, phpcpd
+* Ready for Jenkins
+* A functional example
+
+The generated PHP project does not rely on any other PHP dependency than Composer (e.g. no PEAR dependency).
+
+The generated Composer project has the following tasks:
+
+* [PHPUnit](http://phpunit.de/) to run tests ```composer phpunit```
+* Phpcs to review quality of code (symfony2 standards) ```composer phpcs```
+* Usage of [Php Copy/Paste Detector](https://github.com/sebastianbergmann/phpcpd) ```composer phpcpd```
+* Usage of phpmd to detect ugly code ```composer phpmd```
 
 ## Getting Started
 
@@ -18,6 +32,12 @@ Not every new computer comes with a Yeoman pre-installed. He lives in the [npm](
 ```bash
 npm install -g yo
 ```
+
+### Requirements
+
+* [Yeoman](http://yeoman.io/)
+* [XDebug](http://xdebug.org/docs/install)
+* [composer](https://getcomposer.org/download/) 
 
 ### Yeoman Generators
 
