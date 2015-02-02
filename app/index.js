@@ -9,7 +9,7 @@ var spawn  = require('child_process').spawn;
 function validateNotBlank(input) {
     input = this._.str.trim(input);
 
-    if (this._.str.isBlank(input)) {
+    if (!input || this._.str.isBlank(input)) {
         return 'This value can not be blank. Please insert a valid value';
     }
 
@@ -30,7 +30,7 @@ module.exports = yeoman.generators.Base.extend({
         this.option('folder-name', {type: String, desc: 'Generated code folder name destination (ex. your-library-name)', required: false });
         this.option('package-name', {type: String, desc: 'Composer package name (ex. company/your-library-name)', required: false });
         this.option('skip-desc', { desc: 'Skip provide description answer.', required: false, defaults: false });
-        this.option('ps4-namespace', { desc: 'Ps4 base namespace for your library. (ex. Company\\YourLibraryName)', required: false, defaults: false });
+        this.option('ps4-namespace', { desc: 'Ps4 base namespace for your library. (ex. Company\\YourLibraryName)', required: false });
     },
     prompting: function () {
         var done = this.async();
@@ -39,7 +39,7 @@ module.exports = yeoman.generators.Base.extend({
         ));
         var prompts = [{
             when: function () {
-                if(validateNotBlank.apply(this, [this.options['folder-name']])) {
+                if(validateNotBlank.apply(this, [this.options['folder-name']]) === true) {
                     this.log.writeln('destination folder name: ' + this.options['folder-name']);
                     return false;
                 }
@@ -54,7 +54,7 @@ module.exports = yeoman.generators.Base.extend({
             }.bind(this)
         },{
             when: function () {
-                if(validateNotBlank.apply(this, [this.options['package-name']])) {
+                if(validateNotBlank.apply(this, [this.options['package-name']]) === true) {
                     this.log.writeln('package name: ' + this.options['package-name']);
                     return false;
                 }
@@ -82,7 +82,7 @@ module.exports = yeoman.generators.Base.extend({
             validate : validateNotBlank.bind(this)
         }, {
             when: function () {
-                if(validateNotBlank.apply(this, [this.options['ps4-namespace']])) {
+                if(validateNotBlank.apply(this, [this.options['ps4-namespace']]) === true) {
                     this.log.writeln('ps4 namespace: ' + this.options['ps4-namespace']);
                     return false;
                 }
@@ -93,9 +93,11 @@ module.exports = yeoman.generators.Base.extend({
             message: 'Please, provide a ps4 namespace for your library.',
             default: function (props) {
                 var packageNameParts = props.packageName ? props.packageName.split('/') : this.options['package-name'].split('/');
+
                 return this._.map(packageNameParts, function (part) {
                     return this._.str.classify(part);
                 }.bind(this)).join('\\');
+
             }.bind(this),
             validate: validateNotBlank.bind(this)
         }];
