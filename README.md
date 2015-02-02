@@ -17,6 +17,14 @@ The generated Composer project has the following tasks:
 * Usage of [Php Copy/Paste Detector](https://github.com/sebastianbergmann/phpcpd) ```composer phpcpd```
 * Usage of phpmd to detect ugly code ```composer phpmd```
 
+
+### Requirements
+
+* [Yeoman](http://yeoman.io/)
+* [XDebug](http://xdebug.org/docs/install)
+* [composer](https://getcomposer.org/download/) 
+
+
 ## Getting Started
 
 ### What is Yeoman?
@@ -32,12 +40,6 @@ Not every new computer comes with a Yeoman pre-installed. He lives in the [npm](
 ```bash
 npm install -g yo
 ```
-
-### Requirements
-
-* [Yeoman](http://yeoman.io/)
-* [XDebug](http://xdebug.org/docs/install)
-* [composer](https://getcomposer.org/download/) 
 
 ### Yeoman Generators
 
