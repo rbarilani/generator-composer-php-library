@@ -67,3 +67,8 @@ If you'd like to get to know Yeoman better and meet some of his friends, [Grunt]
 ## License
 
 MIT
+
+## Development/Contributing
+
+Contributions to generator-composer-php-library are highly welcome. Just clone its Github repository and submit your contributions as pull requests. 
+
