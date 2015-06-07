@@ -4,11 +4,11 @@
   "description": "Yeoman (http://yeoman.io) generator for a PHP Composer library",
   "license": "MIT",
   "main": "app/index.js",
-  "repository": "hal9087/generator-composer-php-library",
+  "repository": "rbarilani/generator-composer-php-library",
   "author": {
     "name": "Ruben Barilani",
     "email": "ruben.barilani.dev@gmail.com",
-    "url": "https://github.com/hal9087"
+    "url": "https://github.com/rbarilani"
   },
   "engines": {
     "node": ">=0.10.0"

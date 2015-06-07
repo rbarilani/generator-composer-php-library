@@ -1,4 +1,4 @@
-# generator-composer-php-library [![Build Status](https://secure.travis-ci.org/hal9087/generator-composer-php-library.png?branch=master)](https://travis-ci.org/hal9087/generator-composer-php-library)
+# generator-composer-php-library [![Build Status](https://secure.travis-ci.org/rbarilani/generator-composer-php-library.png?branch=master)](https://travis-ci.org/rbarilani/generator-composer-php-library)
 
 > [Yeoman](http://yeoman.io) generator
 
