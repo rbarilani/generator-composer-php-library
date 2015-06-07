@@ -1,6 +1,6 @@
 {
   "name": "generator-composer-php-library",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Yeoman (http://yeoman.io) generator for a PHP Composer library",
   "license": "MIT",
   "main": "app/index.js",
